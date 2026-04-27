@@ -122,7 +122,6 @@ function Auth() {
 
       <header className="hdr-bar">
         <div className="hdr-brand">
-          <img src="/footlioo-logo.png" alt="Footlioo" className="hdr-logo-img" />
           <span className="hdr-tagline">Know before<br />they grow</span>
         </div>
       </header>
