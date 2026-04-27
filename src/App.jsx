@@ -117,38 +117,27 @@ function Auth() {
     })
   }
 
-  const openLogin = (e) => {
-    e.preventDefault()
-    setIsLogin(true)
-    setShowAuth(true)
-    requestAnimationFrame(() => {
-      document.getElementById('start')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-    })
-  }
-
   return (
     <div className="page">
 
       <header className="hdr-bar">
         <div className="hdr-brand">
-          <h1 className="hdr-tagline">Know before they grow 👣</h1>
+          <img src="/footlioo-logo.png" alt="Footlioo" className="hdr-logo-img" />
+          <span className="hdr-tagline">Know before<br />they grow</span>
         </div>
-        <a href="#start" className="hdr-login" onClick={openLogin}>Log ind</a>
       </header>
 
       <section className="intro-wrap">
         <div className="intro-card">
-          <div className="intro-headline-box">
-            <p className="intro-headline">Tre ud af fire skolebørn går i forkert fodtøj</p>
-            <p className="intro-facts">Børns fødder vokser op til tre størrelser om året — og børn klager sjældent over forkert fodtøj.</p>
-            <p className="intro-sub">Mål barnets fødder hjemmefra og få størrelsen og pasformen — klar når du skal købe sko</p>
-            <div className="intro-meta">
-              <span>Gratis</span>
-              <span className="intro-meta-dot"></span>
-              <span>Tager 2 minutter</span>
-            </div>
+          <h1 className="intro-subhead">Kære Forælder.</h1>
+          <p className="intro-facts">Tre ud af fire skolebørn går i forkert fodtøj — sikre at dit barn ikke er en af dem.</p>
+          <a className="intro-cta" href="#start" onClick={startMeasure}>Find barnets størrelse →</a>
+          <p className="intro-sub">Mål hjemmefra. Vær klar til næste skokøb.</p>
+          <div className="intro-meta">
+            <span>Gratis</span>
+            <span className="intro-meta-dot"></span>
+            <span>Tager 2 minutter</span>
           </div>
-          <a className="intro-cta" href="#start" onClick={startMeasure}>Mål barnets fødder →</a>
         </div>
       </section>
 
@@ -173,8 +162,6 @@ function Auth() {
       )}
 
       <footer className="foot">
-        <h2 className="foot-h">Footlioo</h2>
-        <p className="foot-sub">Know before they grow. 👣</p>
         <div className="foot-links">
           <a href="#metode">Om Footlioo</a>
           <a href="#privatliv">Privatliv</a>
@@ -185,7 +172,7 @@ function Auth() {
       </footer>
 
       <div className="sticky-cta" id="stickyCta">
-        <a href="#start" onClick={startMeasure}>Mål barnets fødder →</a>
+        <a href="#start" onClick={startMeasure}>Find barnets størrelse →</a>
       </div>
 
     </div>
