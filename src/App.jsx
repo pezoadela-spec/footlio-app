@@ -78,6 +78,7 @@ function Auth() {
   const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false)
   const [message, setMessage] = useState('')
+  const [showAuth, setShowAuth] = useState(false)
 
   const handleLogin = async () => {
     setLoading(true)
@@ -94,28 +95,99 @@ function Auth() {
     setLoading(false)
   }
 
-  return (
-    <div style={{ minHeight: '100vh', background: COLORS.cream }}>
-      <div style={{ maxWidth: '400px', margin: '0 auto', padding: '40px 20px' }}>
-        <div style={{ textAlign: 'center', marginBottom: '32px' }}>
-          <div style={s.hdrLogo}>Footlio</div>
-          <div style={{ fontSize: '1.2rem', color: COLORS.inkSoft }}>Know before they grow 👣</div>
-        </div>
+  useEffect(() => {
+    const sticky = document.getElementById('stickyCta')
+    const intro = document.querySelector('.intro-wrap')
+    const onScroll = () => {
+      if (!sticky || !intro) return
+      const introBottom = intro.offsetTop + intro.offsetHeight
+      if (window.scrollY > introBottom - 100) sticky.classList.add('show')
+      else sticky.classList.remove('show')
+    }
+    window.addEventListener('scroll', onScroll)
+    onScroll()
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
-        <div style={s.card}>
-          <input style={s.inp} placeholder="Email" value={email}
-            onChange={e => setEmail(e.target.value)} />
-          <input style={s.inp} type="password" placeholder="Password" value={password}
-            onChange={e => setPassword(e.target.value)} />
-          {message && <p style={{ color: '#C4623A', marginBottom: 10, fontSize: '0.85rem', fontWeight: 600 }}>{message}</p>}
-          <button style={s.btnP} onClick={isLogin ? handleLogin : handleSignUp} disabled={loading}>
-            {loading ? '...' : isLogin ? 'Log ind' : 'Opret konto'}
-          </button>
-          <button style={s.btnO} onClick={() => { setIsLogin(!isLogin); setMessage('') }}>
-            {isLogin ? 'Opret ny konto' : 'Jeg har allerede en konto'}
-          </button>
+  const startMeasure = (e) => {
+    e.preventDefault()
+    setShowAuth(true)
+    requestAnimationFrame(() => {
+      document.getElementById('start')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    })
+  }
+
+  return (
+    <div className="page">
+
+      <header className="hdr-bar">
+        <div className="hdr-brand">
+          <span className="hdr-tagline">Know before<br />they grow</span>
         </div>
+        <a
+          className="hdr-login"
+          href="#start"
+          onClick={(e) => {
+            e.preventDefault()
+            setIsLogin(true)
+            setShowAuth(true)
+            requestAnimationFrame(() => {
+              document.getElementById('start')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+            })
+          }}
+        >
+          Login
+        </a>
+      </header>
+
+      <section className="intro-wrap">
+        <div className="intro-card">
+          <h1 className="intro-subhead">Kære Forælder.</h1>
+          <p className="intro-facts">Tre ud af fire skolebørn går i forkert fodtøj — sikre at dit barn ikke er en af dem.</p>
+          <a className="intro-cta" href="#start" onClick={startMeasure}>Find barnets størrelse →</a>
+          <p className="intro-sub">Mål hjemmefra. Vær klar til næste skokøb.</p>
+          <div className="intro-meta">
+            <span>Gratis</span>
+            <span className="intro-meta-dot"></span>
+            <span>Tager 2 minutter</span>
+          </div>
+        </div>
+      </section>
+
+      {showAuth && (
+        <section id="start" className="auth-section">
+          <div className="auth-card">
+            <div className="auth-h">{isLogin ? 'Log ind' : 'Opret konto'}</div>
+            <div className="auth-sub">Gem dine måleresultater og følg fodvæksten over tid.</div>
+            <input className="auth-input" placeholder="Email" value={email}
+              onChange={e => setEmail(e.target.value)} />
+            <input className="auth-input" type="password" placeholder="Adgangskode" value={password}
+              onChange={e => setPassword(e.target.value)} />
+            {message && <p className="auth-msg">{message}</p>}
+            <button className="auth-primary" onClick={isLogin ? handleLogin : handleSignUp} disabled={loading}>
+              {loading ? '...' : isLogin ? 'Log ind' : 'Opret konto'}
+            </button>
+            <button className="auth-secondary" onClick={() => { setIsLogin(!isLogin); setMessage('') }}>
+              {isLogin ? 'Opret ny konto' : 'Jeg har allerede en konto'}
+            </button>
+          </div>
+        </section>
+      )}
+
+      <footer className="foot">
+        <div className="foot-links">
+          <a href="#metode">Om Footlioo</a>
+          <a href="#privatliv">Privatliv</a>
+          <a href="#loefter">Vores løfter</a>
+          <a href="#kontakt">Kontakt</a>
+        </div>
+        <p className="foot-legal">Footlioo ApS · CVR 46392043 · Danmark</p>
+      </footer>
+
+      <div className="sticky-cta" id="stickyCta">
+        <a href="#start" onClick={startMeasure}>Find barnets størrelse →</a>
       </div>
+
     </div>
   )
 }
