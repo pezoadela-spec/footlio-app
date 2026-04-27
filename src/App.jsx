@@ -140,8 +140,8 @@ function Auth() {
         <div className="intro-card">
           <div className="intro-headline-box">
             <p className="intro-headline">Tre ud af fire skolebørn går i forkert fodtøj</p>
-            <p className="intro-facts">Børns fødder vokser op til tre størrelser om året, børn klager sjældent på forkert fodtøj</p>
-            <p className="intro-sub">Se hvordan du måler korrekt og se dit barns sko størrelse og passform</p>
+            <p className="intro-facts">Børns fødder vokser op til tre størrelser om året — og børn klager sjældent over forkert fodtøj.</p>
+            <p className="intro-sub">Mål barnets fødder hjemmefra og få størrelsen og pasformen — klar når du skal købe sko</p>
             <div className="intro-meta">
               <span>Gratis</span>
               <span className="intro-meta-dot"></span>
