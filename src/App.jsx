@@ -131,30 +131,13 @@ function Auth() {
 
       <header className="hdr-bar">
         <div className="hdr-brand">
-          <svg className="hdr-feet" viewBox="0 0 64 56" xmlns="http://www.w3.org/2000/svg" aria-label="Footlioo" role="img">
-            <g fill="#8B5CF6">
-              {/* Left foot */}
-              <ellipse cx="16" cy="36" rx="9" ry="13" />
-              <circle cx="8" cy="18" r="2.4" />
-              <circle cx="14" cy="13" r="2.2" />
-              <circle cx="20" cy="13.5" r="2" />
-              <circle cx="25" cy="17" r="1.7" />
-              {/* Right foot */}
-              <ellipse cx="48" cy="36" rx="9" ry="13" />
-              <circle cx="39" cy="17" r="1.7" />
-              <circle cx="44" cy="13.5" r="2" />
-              <circle cx="50" cy="13" r="2.2" />
-              <circle cx="56" cy="18" r="2.4" />
-            </g>
-          </svg>
-          <span className="hdr-tagline">Know before<br/>they grow</span>
+          <h1 className="hdr-tagline">Tre ud af fire skolebørn går i forkert fodtøj</h1>
         </div>
         <a href="#start" className="hdr-login" onClick={openLogin}>Log ind</a>
       </header>
 
       <section className="intro-wrap">
         <div className="intro-card">
-          <h1 className="intro-subhead">Tre ud af fire skolebørn går i forkert fodtøj</h1>
           <p className="intro-facts">Børns fødder vokser op til tre størrelser om året, børn klager sjældent på forkert fodtøj</p>
           <p className="intro-sub">Se hvordan du måler korrekt &amp; få størrelsen og pasformen med en gang.</p>
           <div className="intro-meta">
