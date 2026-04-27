@@ -124,6 +124,20 @@ function Auth() {
         <div className="hdr-brand">
           <span className="hdr-tagline">Know before<br />they grow</span>
         </div>
+        <a
+          className="hdr-login"
+          href="#start"
+          onClick={(e) => {
+            e.preventDefault()
+            setIsLogin(true)
+            setShowAuth(true)
+            requestAnimationFrame(() => {
+              document.getElementById('start')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+            })
+          }}
+        >
+          Login
+        </a>
       </header>
 
       <section className="intro-wrap">

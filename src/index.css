@@ -62,21 +62,23 @@ body{
   margin:0;
 }
 .hdr-login{
-  background:rgba(255,255,255,.15);
-  border:1.5px solid rgba(255,255,255,.25);
+  background:var(--terracotta);
+  border:none;
   color:#fff;
   font-family:'DM Sans',sans-serif;
-  font-size:0.78rem;
+  font-size:0.82rem;
   font-weight:700;
-  padding:7px 14px;
+  padding:8px 18px;
   border-radius:50px;
   cursor:pointer;
   text-decoration:none;
-  transition:background .15s;
+  transition:background .15s, box-shadow .15s, transform .1s;
   flex-shrink:0;
   margin-top:6px;
+  box-shadow:0 2px 8px rgba(196,98,58,.25);
 }
-.hdr-login:hover{background:rgba(255,255,255,.25);}
+.hdr-login:hover{background:var(--terracotta-deep);box-shadow:0 4px 12px rgba(196,98,58,.35);}
+.hdr-login:active{transform:scale(0.97);}
 
 /* ============================================================ */
 /* INTRO CARD */
