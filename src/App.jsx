@@ -131,19 +131,22 @@ function Auth() {
 
       <header className="hdr-bar">
         <div className="hdr-brand">
-          <h1 className="hdr-tagline">Tre ud af fire skolebørn går i forkert fodtøj</h1>
+          <h1 className="hdr-tagline">Know before they grow 👣</h1>
         </div>
         <a href="#start" className="hdr-login" onClick={openLogin}>Log ind</a>
       </header>
 
       <section className="intro-wrap">
         <div className="intro-card">
-          <p className="intro-facts">Børns fødder vokser op til tre størrelser om året, børn klager sjældent på forkert fodtøj</p>
-          <p className="intro-sub">Se hvordan du måler korrekt &amp; få størrelsen og pasformen med en gang.</p>
-          <div className="intro-meta">
-            <span>Gratis</span>
-            <span className="intro-meta-dot"></span>
-            <span>Tager 2 minutter</span>
+          <div className="intro-headline-box">
+            <p className="intro-headline">Tre ud af fire skolebørn går i forkert fodtøj</p>
+            <p className="intro-facts">Børns fødder vokser op til tre størrelser om året, børn klager sjældent på forkert fodtøj</p>
+            <p className="intro-sub">Se hvordan du måler korrekt &amp; få størrelsen og pasformen med en gang.</p>
+            <div className="intro-meta">
+              <span>Gratis</span>
+              <span className="intro-meta-dot"></span>
+              <span>Tager 2 minutter</span>
+            </div>
           </div>
           <a className="intro-cta" href="#start" onClick={startMeasure}>Mål barnets fødder →</a>
         </div>
@@ -171,7 +174,7 @@ function Auth() {
 
       <footer className="foot">
         <h2 className="foot-h">Footlioo</h2>
-        <p className="foot-sub">Know before they grow.</p>
+        <p className="foot-sub">Know before they grow. 👣</p>
         <div className="foot-links">
           <a href="#metode">Om Footlioo</a>
           <a href="#privatliv">Privatliv</a>

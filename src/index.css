@@ -97,6 +97,25 @@ body{
 .intro-card::after{
   content:none;
 }
+.intro-headline-box{
+  border:1.5px solid rgba(255,255,255,.85);
+  border-radius:18px;
+  padding:22px 18px 18px;
+  margin-bottom:20px;
+  position:relative;
+  z-index:1;
+}
+.intro-headline-box > :last-child{margin-bottom:0;}
+.intro-headline{
+  font-family:'Fraunces',serif;
+  font-size:1.45rem;
+  font-weight:700;
+  line-height:1.15;
+  letter-spacing:-0.015em;
+  color:#fff;
+  text-align:center;
+  margin-bottom:18px;
+}
 .intro-eyebrow{
   font-family:'Fraunces',serif;
   font-size:1.35rem;
@@ -203,8 +222,8 @@ body{
   width:66%;
   margin-left:auto;
   margin-right:auto;
-  background:var(--terracotta);
-  color:#fff;
+  background:#fff;
+  color:var(--olive-dark);
   padding:15px 30px;
   border-radius:50px;
   font-family:'DM Sans',sans-serif;
@@ -216,10 +235,10 @@ body{
   position:relative;
   z-index:1;
   transition:transform .1s ease, box-shadow .15s ease;
-  box-shadow:0 4px 16px rgba(196,98,58,.3);
+  box-shadow:0 4px 16px rgba(0,0,0,.18);
   text-align:center;
 }
-.intro-cta:hover{box-shadow:0 6px 22px rgba(196,98,58,.4);}
+.intro-cta:hover{box-shadow:0 6px 22px rgba(0,0,0,.25);}
 .intro-cta:active{transform:scale(0.98);}
 
 /* ============================================================ */
